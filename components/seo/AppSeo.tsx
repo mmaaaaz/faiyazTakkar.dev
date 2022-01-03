@@ -66,6 +66,7 @@ const AppSeo: React.FC<IAppSeoProps> = props => {
 
       {/* Twitter */}
       <meta name="twitter:site" content={appConfig.seo.twitter.username} />
+      <meta name="twitter:creator" content={appConfig.seo.twitter.username} />
       <meta key="twitter:card" name="twitter:card" content={'summary_large_image'} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
