@@ -2,10 +2,10 @@
 
 const path = require('path')
 
-const appEnv = process.env.OWN_STORE_WEB_ENV
+const appEnv = process.env.ENV
 
 if (!appEnv) {
-  console.error('OWN_STORE_WEB_ENV env variable is not set', process.env.OWN_STORE_WEB_ENV)
+  console.error('ENV env variable is not set', process.env.ENV)
   process.exit(1)
 }
 
@@ -21,7 +21,7 @@ const { parsed: parsedEnvs } = require('dotenv').config({
 const nextConfig = {
   env: {
     ...parsedEnvs,
-    OWN_STORE_WEB_ENV: process.env.OWN_STORE_WEB_ENV,
+    ENV: process.env.ENV,
   },
   trailingSlash: false,
   basePath: '',

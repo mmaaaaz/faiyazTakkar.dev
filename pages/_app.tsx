@@ -5,8 +5,6 @@ import { Router, useRouter } from 'next/router'
 import PageContainer from '../components/PageContainer'
 import classNames from 'classnames'
 import AppSeo, { IAppSeoProps } from '../components/seo/AppSeo'
-import Header from '../components/header/Header'
-import Footer from '../components/footer/Footer'
 
 declare let window: any
 
@@ -33,14 +31,11 @@ const MyApp: NextPage<IProps> = props => {
     <div>
       <AppSeo {...seo} />
 
-      <Header />
-
       <main id={classNames('pageMain')} className="pb-10 mt-2 lg:mt-4">
         <PageContainer>
           <Component {...pageProps} key={router.route} />
         </PageContainer>
       </main>
-      <Footer />
     </div>
   )
 }

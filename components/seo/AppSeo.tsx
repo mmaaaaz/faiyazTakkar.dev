@@ -4,7 +4,6 @@ import debug from 'debug'
 import { prepareHomePageSeo } from '../../utils/seo/home'
 import { APP_LOGO } from '../../constants/constants'
 import appConfig from '../../config/appConfig'
-import { prepareWebpageStructuredData } from '../../utils/seo/structuredData'
 
 const log = debug('seo')
 
@@ -65,29 +64,12 @@ const AppSeo: React.FC<IAppSeoProps> = props => {
       <meta key="og:image" property="og:image" content={imageUrl} />
       <meta key="og:url" property="og:url" content={canonical} />
 
-      {/* Facebook */}
-      <meta property="fb:pages" content={appConfig.seo.facebook.pageId} />
-
       {/* Twitter */}
       <meta name="twitter:site" content={appConfig.seo.twitter.username} />
-      <meta key="twitter:card" name="twitter:card" content={'summary'} />
+      <meta key="twitter:card" name="twitter:card" content={'summary_large_image'} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl}></meta>
-
-      {/* Structured data */}
-      <script
-        key="webPage"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            prepareWebpageStructuredData({
-              title: title,
-              description: description,
-              url: canonical,
-            })
-          ),
-        }}></script>
     </Head>
   )
 }
