@@ -5,6 +5,13 @@ import { Router, useRouter } from 'next/router'
 import PageContainer from '../components/PageContainer'
 import classNames from 'classnames'
 import AppSeo, { IAppSeoProps } from '../components/seo/AppSeo'
+import ApplicationContext, {
+  defaultApplicationContext,
+  IApplicationContextProps,
+} from '../components/ApplicationContext'
+import { getDeviceInfo } from '../utils/applicationContext'
+import { isBrowser } from '../utils/common'
+import Menu from '../components/menu/Menu'
 
 declare let window: any
 
@@ -27,15 +34,36 @@ const MyApp: NextPage<IProps> = props => {
 
   const router = useRouter()
 
+  const [appState, setAppState] = useState({
+    device: defaultApplicationContext.device,
+  })
+
+  useEffect(() => {
+    if (isBrowser()) {
+      setAppState({
+        device: getDeviceInfo(),
+      })
+    }
+  }, [])
+
+  const applicationContext: IApplicationContextProps = {
+    device: appState.device,
+  }
+
   return (
     <div>
-      <AppSeo {...seo} />
+      <ApplicationContext.Provider value={applicationContext}>
+        <AppSeo {...seo} />
 
-      <main id={classNames('pageMain')} className="pb-10 mt-2 lg:mt-4">
         <PageContainer>
-          <Component {...pageProps} key={router.route} />
+          <div className="flex">
+            <Menu />
+            <div className="md:mt-5">
+              <Component {...pageProps} key={router.route} />
+            </div>
+          </div>
         </PageContainer>
-      </main>
+      </ApplicationContext.Provider>
     </div>
   )
 }

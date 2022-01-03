@@ -1,10 +1,6 @@
 // globals
 a {
-  @apply text-primaryText transition-all;
-
-  &:hover {
-    @apply text-primaryTextBold;
-  }
+  @apply transition-all text-black;
 }
 
 .gradient {
