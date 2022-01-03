@@ -13,14 +13,12 @@ const NotFoundPage: NextPage<IProps> = props => {
   const { pageData } = props
 
   return (
-    <div>
-      <PageContainer>
-        <div className="flex flex-col items-center justify-center mt-20">
-          <CoreImage url={'/images/empty/empty-glass.svg'} alt="Page not found" className="w-52 lg:w-60" />
-          <div className="text-center text-lg lg:text-xl mt-5 w-[320px] md:w-auto">{`We couldn't find the page you were looking for.`}</div>
-          <div className="text-center mt-2 lg:mt-3"></div>
-        </div>
-      </PageContainer>
+    <div className="md:absolute transform md:left-1/2 md:-translate-x-1/2">
+      <div className="flex flex-col items-center justify-center mt-20">
+        <CoreImage url={'/images/empty/empty-glass.svg'} alt="Page not found" className="w-52 lg:w-60" />
+        <div className="text-center text-lg lg:text-xl mt-5">{`We couldn't find the page you were looking for.`}</div>
+        <div className="text-center mt-2 lg:mt-3"></div>
+      </div>
     </div>
   )
 }

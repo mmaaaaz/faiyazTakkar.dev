@@ -1,4 +1,4 @@
-import { BriefcaseIcon, ChipIcon, ExternalLinkIcon, HomeIcon } from '@heroicons/react/outline'
+import { AnnotationIcon, BriefcaseIcon, ChipIcon, ExternalLinkIcon, HomeIcon } from '@heroicons/react/outline'
 import React, { useState } from 'react'
 import { SOCIAL_ICONS_SRC_MAP } from '../../constants/constants'
 import { getHomePageUrl } from '../../utils/home'
@@ -11,6 +11,11 @@ const PAGE_LINKS = [
     label: 'Home',
     icon: HomeIcon,
     url: getHomePageUrl(),
+  },
+  {
+    label: 'Detailed Intro',
+    icon: AnnotationIcon,
+    url: 's',
   },
   {
     label: 'Side Projects',
@@ -141,10 +146,10 @@ const MenuDesktop: React.FC<IMenuDesktopProps> = props => {
 const Menu: React.FC<IMenuProps> = props => {
   return (
     <div>
-      <MobileView>
+      <MobileView useCSS>
         <MenuMobile {...props} />
       </MobileView>
-      <DesktopView>
+      <DesktopView useCSS>
         <MenuDesktop {...props} />
       </DesktopView>
     </div>
