@@ -1,5 +1,6 @@
 import { AnnotationIcon, BriefcaseIcon, ChipIcon, ExternalLinkIcon, HomeIcon } from '@heroicons/react/outline'
 import React, { useState } from 'react'
+import appConfig from '../../config/appConfig'
 import { SOCIAL_ICONS_SRC_MAP } from '../../constants/constants'
 import { getHomePageUrl } from '../../utils/home'
 import CoreActiveLink from '../core/CoreActiveLink'
@@ -34,31 +35,31 @@ const SOCIAL_LINKS = [
     label: 'Twitter',
     iconUrl: SOCIAL_ICONS_SRC_MAP.TWITTER,
     isExternal: true,
-    url: getHomePageUrl(),
+    url: appConfig.global.socialProfiles.twitter,
   },
   {
     label: 'GitHub',
     iconUrl: SOCIAL_ICONS_SRC_MAP.GITHUB,
     isExternal: true,
-    url: getHomePageUrl(),
+    url: appConfig.global.socialProfiles.gitHub,
   },
   {
     label: 'LinkedIn',
     iconUrl: SOCIAL_ICONS_SRC_MAP.LINKEDIN,
     isExternal: true,
-    url: getHomePageUrl(),
+    url: appConfig.global.socialProfiles.linkedIn,
   },
   {
     label: 'Instagram',
     iconUrl: SOCIAL_ICONS_SRC_MAP.INSTAGRAM,
     isExternal: true,
-    url: getHomePageUrl(),
+    url: appConfig.global.socialProfiles.instagram,
   },
   {
     label: 'Email',
     iconUrl: SOCIAL_ICONS_SRC_MAP.MAIL,
     isExternal: false,
-    url: getHomePageUrl(),
+    url: `mailto:${appConfig.global.emailAddress}`,
   },
 ]
 
@@ -92,10 +93,11 @@ const MenuContent: React.FC<IMenuProps> = () => {
             <CoreActiveLink
               key={socialLink.label}
               url={socialLink.url}
-              className="flex items-center hover:bg-gray100 transition-all rounded-lg w-full px-4 py-2 mb-2">
+              className="flex items-center hover:bg-gray100 transition-all rounded-lg w-full px-4 py-2 mb-2"
+              isExternal={socialLink.isExternal}>
               <CoreImage className="w-5 h-5 mr-2" alt={socialLink.label} url={socialLink.iconUrl} />
               <span>{socialLink.label}</span>
-              {socialLink.isExternal ? <ExternalLinkIcon className="w-4 h-4 text-gray400 ml-auto" /> : null}
+              {socialLink.isExternal ? <ExternalLinkIcon className="w-4 h-4 text-gray500 ml-auto" /> : null}
             </CoreActiveLink>
           )
         })}
