@@ -6,6 +6,7 @@ import workConfig from '../config/workConfig'
 import CoreImage from '../components/core/CoreImage'
 import appConfig from '../config/appConfig'
 import CoreLink from '../components/core/CoreLink'
+import { ExternalLinkIcon } from '@heroicons/react/outline'
 
 interface IProps extends IGlobalLayoutProps {
   pageData: {}
@@ -18,6 +19,16 @@ const Work: NextPage<IProps> = props => {
     <div className="pt-5 lg:pt-8 lg:ml-72">
       <div className="px-5 md:px-10 pb-20">
         <div className="text-2xl font-bold font-primary-bold">My work experience!</div>
+
+        <div className="mt-2">
+          Learn more about my profession experience on{' '}
+          <CoreLink
+            url={appConfig.global.socialProfiles.linkedIn}
+            isExternal
+            className="font-medium font-primary-medium border-dashed border-b border-funBlue text-funBlue inline-flex">
+            LinkedIn <ExternalLinkIcon className="w-4 ml-1" />
+          </CoreLink>{' '}
+        </div>
 
         <div className="mt-6 grid grid-cols-1 lg:gap-y-4">
           {workExperienceList.map((workExperience, index) => {
