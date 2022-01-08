@@ -11,6 +11,7 @@ import CoreImage from '../core/CoreImage'
 import CoreLink from '../core/CoreLink'
 import { DesktopView, MobileView } from '../ResponsiveViews'
 import classnames from 'classnames'
+import { getIntroPageUrl } from '../../utils/intro'
 
 const PAGE_LINKS = [
   {
@@ -21,7 +22,7 @@ const PAGE_LINKS = [
   {
     label: 'Detailed Intro',
     icon: AnnotationIcon,
-    url: 's',
+    url: getIntroPageUrl(),
   },
   {
     label: 'Side Projects',
