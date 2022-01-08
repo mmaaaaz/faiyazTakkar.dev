@@ -57,7 +57,7 @@ const AppSeo: React.FC<IAppSeoProps> = props => {
       <link key="canonical" rel="canonical" href={canonical} />
 
       {/* OpenGraph */}
-      <meta property="og:site_name" content={appConfig.global.app.name} />
+      <meta property="og:site_name" content={appConfig.global.name} />
       <meta property="og:type" key="og:type" content="website" />
       <meta key="og:title" property="og:title" content={title} />
       <meta key="og:description" property="og:description" content={description} />

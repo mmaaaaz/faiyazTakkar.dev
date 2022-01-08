@@ -1,14 +1,14 @@
-const name = 'OwnStore'
+const name = 'Faiyaz'
+const fullName = 'Faiyaz Shaikh'
 
 const appConfig = {
   isDev: process.env.ENV?.includes('local'),
   env: process.env.ENV,
   global: {
-    app: {
-      name: name,
-    },
     domain: process.env.ENV_DOMAIN,
     baseUrl: process.env.ENV_BASE_URL,
+    name: name,
+    fullName: fullName,
     emailAddress: 'www.shtakkar@gmail.com',
     socialProfiles: {
       twitter: 'https://twitter.com/shtakkar',

@@ -56,11 +56,11 @@ const MyApp: NextPage<IProps> = props => {
         <AppSeo {...seo} />
 
         <PageContainer>
-          <div className="flex">
+          <div className="flex items-start">
             <Menu />
-            <div className="md:mt-5">
+            <main className="mt-5 lg:mt-8 lg:ml-64">
               <Component {...pageProps} key={router.route} />
-            </div>
+            </main>
           </div>
         </PageContainer>
       </ApplicationContext.Provider>

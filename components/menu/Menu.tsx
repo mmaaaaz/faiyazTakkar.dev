@@ -1,8 +1,9 @@
 import { AnnotationIcon, BriefcaseIcon, ChipIcon, ExternalLinkIcon, HomeIcon } from '@heroicons/react/outline'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import appConfig from '../../config/appConfig'
 import { SOCIAL_ICONS_SRC_MAP } from '../../constants/constants'
 import { getHomePageUrl } from '../../utils/home'
+import ApplicationContext from '../ApplicationContext'
 import CoreActiveLink from '../core/CoreActiveLink'
 import CoreImage from '../core/CoreImage'
 import { DesktopView, MobileView } from '../ResponsiveViews'
@@ -112,7 +113,7 @@ const MenuMobile: React.FC<IMenuMobileProps> = props => {
   const [showMenu, toggleMenu] = useState(false)
 
   return (
-    <div>
+    <nav>
       {!showMenu ? (
         <div className="fixed bottom-0 left-0 z-10 block w-full p-2" onClick={() => toggleMenu(true)}>
           <div className="border border-gray400 rounded-lg text-black bg-white/70 backdrop-filter backdrop-blur py-3 text-center cursor-pointer">
@@ -122,7 +123,7 @@ const MenuMobile: React.FC<IMenuMobileProps> = props => {
       ) : null}
 
       {showMenu ? (
-        <div className="fixed bottom-0 left-0 right-0 p-2 m-2 bg-white/70 backdrop-filter backdrop-blur border border-gray400 rounded-lg">
+        <div className="fixed bottom-0 left-0 right-0 z-10 p-2 m-2 bg-white/70 backdrop-filter backdrop-blur border border-gray400 rounded-lg">
           <div className="py-3 text-center cursor-pointer text-black" onClick={() => toggleMenu(false)}>
             Close
           </div>
@@ -131,7 +132,7 @@ const MenuMobile: React.FC<IMenuMobileProps> = props => {
       ) : (
         false
       )}
-    </div>
+    </nav>
   )
 }
 
@@ -139,13 +140,18 @@ interface IMenuDesktopProps extends IMenuProps {}
 
 const MenuDesktop: React.FC<IMenuDesktopProps> = props => {
   return (
-    <div className="bg-white w-64 border-r border-gray200 h-screen pt-6 pb-10 flex flex-col px-4">
+    <aside className="bg-white w-64 border-r border-gray200 h-screen pt-6 pb-10 flex flex-col px-4 fixed">
       <MenuContent />
-    </div>
+    </aside>
   )
 }
 
 const Menu: React.FC<IMenuProps> = props => {
+  const applicationContext = useContext(ApplicationContext)
+  const {
+    device: { isSm },
+  } = applicationContext
+
   return (
     <div>
       <MobileView useCSS>
