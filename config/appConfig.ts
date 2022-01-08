@@ -1,4 +1,5 @@
 const name = 'Faiyaz'
+const nickName = 'Takkar'
 const fullName = 'Faiyaz Shaikh'
 
 const appConfig = {
@@ -8,6 +9,7 @@ const appConfig = {
     domain: process.env.ENV_DOMAIN,
     baseUrl: process.env.ENV_BASE_URL,
     name: name,
+    nickName: nickName,
     fullName: fullName,
     emailAddress: 'www.shtakkar@gmail.com',
     socialProfiles: {

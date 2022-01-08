@@ -23,9 +23,9 @@ const Home: NextPage<IProps> = props => {
         </div>
 
         <div>
-          <h2 className="mt-12 mb-6 text-3xl font-black md:text-5xl font-primary-bold">
+          <h2 className="mt-12 mb-6 text-3xl lg:text-4xl font-black font-primary-bold">
             <span className="text-gray600">Hi, I'm </span>
-            {appConfig.global.fullName}!
+            {appConfig.global.name} ({appConfig.global.nickName})
           </h2>
         </div>
 
