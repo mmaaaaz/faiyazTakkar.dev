@@ -12,6 +12,7 @@ import CoreLink from '../core/CoreLink'
 import { DesktopView, MobileView } from '../ResponsiveViews'
 import classnames from 'classnames'
 import { getIntroPageUrl } from '../../utils/intro'
+import { getSideProjectsPageUrl } from '../../utils/side-projects'
 
 const PAGE_LINKS = [
   {
@@ -27,7 +28,7 @@ const PAGE_LINKS = [
   {
     label: 'Side Projects',
     icon: ChipIcon,
-    url: 'ssa',
+    url: getSideProjectsPageUrl(),
   },
   {
     label: 'Work',
