@@ -1,12 +1,16 @@
 import { AnnotationIcon, BriefcaseIcon, ChipIcon, ExternalLinkIcon, HomeIcon } from '@heroicons/react/outline'
+import { useRouter } from 'next/router'
 import React, { useContext, useState } from 'react'
 import appConfig from '../../config/appConfig'
 import { SOCIAL_ICONS_SRC_MAP } from '../../constants/constants'
 import { getHomePageUrl } from '../../utils/home'
+import { getWorkPageUrl } from '../../utils/work'
 import ApplicationContext from '../ApplicationContext'
 import CoreActiveLink from '../core/CoreActiveLink'
 import CoreImage from '../core/CoreImage'
+import CoreLink from '../core/CoreLink'
 import { DesktopView, MobileView } from '../ResponsiveViews'
+import classnames from 'classnames'
 
 const PAGE_LINKS = [
   {
@@ -27,7 +31,7 @@ const PAGE_LINKS = [
   {
     label: 'Work',
     icon: BriefcaseIcon,
-    url: 'ssaa',
+    url: getWorkPageUrl(),
   },
 ]
 
@@ -67,6 +71,8 @@ const SOCIAL_LINKS = [
 interface IMenuProps {}
 
 const MenuContent: React.FC<IMenuProps> = () => {
+  const { asPath } = useRouter()
+
   return (
     <div>
       <div>
@@ -75,14 +81,16 @@ const MenuContent: React.FC<IMenuProps> = () => {
           const Icon = pageLink.icon || defaultIcon
 
           return (
-            <CoreActiveLink
+            <CoreLink
               key={pageLink.label}
               url={pageLink.url}
-              className="flex items-center hover:bg-gray100 transition-all rounded-lg w-full px-4 py-2 mb-2"
-              activeClassName="bg-primary hover:bg-primary text-white">
+              className={classnames(
+                'flex items-center transition-all rounded-lg w-full px-4 py-2 mb-2',
+                asPath === pageLink.url ? 'bg-primary hover:bg-primary text-white' : 'hover:bg-gray100'
+              )}>
               <Icon className="w-6 h-6 mr-2" />
               <span>{pageLink.label}</span>
-            </CoreActiveLink>
+            </CoreLink>
           )
         })}
       </div>
@@ -123,7 +131,9 @@ const MenuMobile: React.FC<IMenuMobileProps> = props => {
       ) : null}
 
       {showMenu ? (
-        <div className="fixed bottom-0 left-0 right-0 z-10 p-2 m-2 bg-white/70 backdrop-filter backdrop-blur border border-gray400 rounded-lg">
+        <div
+          className="fixed bottom-0 left-0 right-0 z-10 p-2 m-2 bg-white/70 backdrop-filter backdrop-blur border border-gray400 rounded-lg"
+          onClick={() => toggleMenu(false)}>
           <div className="py-3 text-center cursor-pointer text-black" onClick={() => toggleMenu(false)}>
             Close
           </div>
