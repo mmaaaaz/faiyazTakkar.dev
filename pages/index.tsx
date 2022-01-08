@@ -31,25 +31,36 @@ const Home: NextPage<IProps> = props => {
 
         <div className="post-content text-lg text-gray900">
           <p className="">
-            I'm a <span className="font-medium font-primary-medium">full-stack developer</span> by profession, currently
-            a consultant at ESPN re-writing world's largest cricket platform{' '}
-            <CoreLink url="https://www.espncricinfo.com" isExternal className="underline">
+            A 22-year old <span className="font-medium font-primary-medium">full-stack developer</span> and an{' '}
+            <span className="font-medium font-primary-medium">open-sourcer</span>. Currently a consultant at ESPN
+            re-writing the world's largest cricket platform{' '}
+            <CoreLink
+              url="https://www.espncricinfo.com"
+              isExternal
+              className="border-dashed border-b border-funBlue text-funBlue">
               ESPNcricinfo
             </CoreLink>
             .
           </p>
 
           <p className="mt-8">
-            I like to build advanced yet beautiful digital products with technology that suites best.
+            I like to build advanced yet beautiful digital products with technology that suits them best.
           </p>
 
           <p className="mt-8">
             On weekends I like to do nothing. Sometimes I would read poetry just to remind myself beauty still exists in
-            this world. But these days most of my free time is dedicated to building{' '}
-            <CoreLink url="https://ownstore.dev" isExternal className="underline">
+            this world.
+          </p>
+
+          <p className="mt-8">
+            I've recently open-sourced a profitable product named{' '}
+            <CoreLink
+              url="https://ownstore.dev"
+              isExternal
+              className="border-dashed border-b border-funBlue text-funBlue">
               OwnStore
-            </CoreLink>
-            .
+            </CoreLink>{' '}
+            for the community. Helps businesses set up their online store instantly with a few configurable projects.
           </p>
         </div>
       </div>

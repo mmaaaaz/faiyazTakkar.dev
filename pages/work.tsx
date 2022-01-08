@@ -43,10 +43,10 @@ const Work: NextPage<IProps> = props => {
                 </div>
                 <div>
                   <div className="font-medium font-primary-medium">{workExperience.role}</div>
-                  <div className="text-sm mt-1">
+                  <div className="text-sm">
                     {workExperience.company.name} - {workExperience.location}
                   </div>
-                  <div className="text-sm text-gray700">
+                  <div className="text-sm text-gray700 mt-1">
                     {workExperience.experience.from} - {workExperience.experience.to} •{' '}
                     {workExperience.experience.total}
                   </div>

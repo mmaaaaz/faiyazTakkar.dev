@@ -25,11 +25,11 @@ const PAGE_LINKS = [
     icon: AnnotationIcon,
     url: getIntroPageUrl(),
   },
-  {
-    label: 'Side Projects',
-    icon: ChipIcon,
-    url: getSideProjectsPageUrl(),
-  },
+  // {
+  //   label: 'Side Projects',
+  //   icon: ChipIcon,
+  //   url: getSideProjectsPageUrl(),
+  // },
   {
     label: 'Work',
     icon: BriefcaseIcon,
@@ -39,16 +39,16 @@ const PAGE_LINKS = [
 
 const SOCIAL_LINKS = [
   {
-    label: 'Twitter',
-    iconUrl: SOCIAL_ICONS_SRC_MAP.TWITTER,
-    isExternal: true,
-    url: appConfig.global.socialProfiles.twitter,
-  },
-  {
     label: 'GitHub',
     iconUrl: SOCIAL_ICONS_SRC_MAP.GITHUB,
     isExternal: true,
     url: appConfig.global.socialProfiles.gitHub,
+  },
+  {
+    label: 'Twitter',
+    iconUrl: SOCIAL_ICONS_SRC_MAP.TWITTER,
+    isExternal: true,
+    url: appConfig.global.socialProfiles.twitter,
   },
   {
     label: 'LinkedIn',
