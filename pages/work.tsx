@@ -47,8 +47,8 @@ const Work: NextPage<IProps> = props => {
                     {workExperience.company.name} - {workExperience.location}
                   </div>
                   <div className="text-sm text-gray700 mt-1">
-                    {workExperience.experience.from} - {workExperience.experience.to} •{' '}
-                    {workExperience.experience.total}
+                    {workExperience.experience.from} - {workExperience.experience.to}
+                    {workExperience.experience.total ? ` • ${workExperience.experience.total}` : ''}
                   </div>
                   <div className="mt-1">
                     {workExperience.company.urls.map((url, index) => (

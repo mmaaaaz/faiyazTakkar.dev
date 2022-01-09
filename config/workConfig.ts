@@ -20,7 +20,7 @@ const workConfig = {
       experience: {
         from: 'Nov 2020',
         to: 'Present',
-        total: '1 yr 3 mos',
+        total: '',
       },
     },
     {
