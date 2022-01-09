@@ -31,7 +31,7 @@ const Home: NextPage<IProps> = props => {
 
         <div className="post-content text-lg text-gray900">
           <p className="">
-            A 22-year old <span className="font-medium font-primary-medium">full-stack developer</span> and an{' '}
+            A 23-year old <span className="font-medium font-primary-medium">full-stack developer</span> and an{' '}
             <span className="font-medium font-primary-medium">open-sourcer</span>. Currently a consultant at ESPN
             re-writing the world's largest cricket platform{' '}
             <CoreLink

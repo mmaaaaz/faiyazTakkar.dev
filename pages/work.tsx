@@ -25,7 +25,7 @@ const Work: NextPage<IProps> = props => {
           <CoreLink
             url={appConfig.global.socialProfiles.linkedIn}
             isExternal
-            className="font-medium font-primary-medium border-dashed border-b border-funBlue text-funBlue inline-flex">
+            className="font-medium font-primary-medium border-dashed border-b border-funBlue text-funBlue inline-flex items-center">
             LinkedIn <ExternalLinkIcon className="w-4 ml-1" />
           </CoreLink>{' '}
         </div>
