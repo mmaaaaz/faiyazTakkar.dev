@@ -10,7 +10,11 @@ interface IProps extends IGlobalLayoutProps {
 const Intro: NextPage<IProps> = props => {
   return (
     <div className="pt-5 lg:pt-8 lg:ml-72">
-      <div className="px-5 md:px-10 pb-20">Some text</div>
+      <div className="px-5 md:px-10 pb-20">
+        <div className="text-2xl font-bold font-primary-bold">Detailed introduction</div>
+
+        <p className="mt-6">Coming soon...</p>
+      </div>
     </div>
   )
 }

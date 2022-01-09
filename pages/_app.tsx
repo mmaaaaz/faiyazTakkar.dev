@@ -12,6 +12,7 @@ import ApplicationContext, {
 import { getDeviceInfo } from '../utils/applicationContext'
 import { isBrowser } from '../utils/common'
 import Menu from '../components/menu/Menu'
+import { PageTransition } from 'next-page-transitions'
 
 declare let window: any
 
@@ -58,7 +59,9 @@ const MyApp: NextPage<IProps> = props => {
         <PageContainer>
           <div className="lg:lex items-start">
             <Menu />
-            <Component {...pageProps} key={router.route} />
+            <PageTransition timeout={200} classNames="pageTransition">
+              <Component {...pageProps} key={router.route} />
+            </PageTransition>
           </div>
         </PageContainer>
       </ApplicationContext.Provider>

@@ -18,7 +18,7 @@ const Work: NextPage<IProps> = props => {
   return (
     <div className="pt-5 lg:pt-8 lg:ml-72">
       <div className="px-5 md:px-10 pb-20">
-        <div className="text-2xl font-bold font-primary-bold">My work experience!</div>
+        <div className="text-2xl lg:text-3xl font-bold font-primary-bold">My work experience!</div>
 
         <div className="mt-2">
           Learn more about my profession experience on{' '}
@@ -42,7 +42,7 @@ const Work: NextPage<IProps> = props => {
                   />
                 </div>
                 <div>
-                  <div className="font-medium font-primary-medium">{workExperience.role}</div>
+                  <div className="font-medium font-primary-medium text-lg">{workExperience.role}</div>
                   <div className="text-sm">
                     {workExperience.company.name} - {workExperience.location}
                   </div>
