@@ -25,11 +25,11 @@ const PAGE_LINKS = [
     icon: AnnotationIcon,
     url: getIntroPageUrl(),
   },
-  // {
-  //   label: 'Side Projects',
-  //   icon: ChipIcon,
-  //   url: getSideProjectsPageUrl(),
-  // },
+  {
+    label: 'Side Projects',
+    icon: ChipIcon,
+    url: getSideProjectsPageUrl(),
+  },
   {
     label: 'Work',
     icon: BriefcaseIcon,
