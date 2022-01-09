@@ -25,7 +25,12 @@ const appConfig = {
       username: process.env.ENV_SEO_TWITTER_USERNAME,
     },
   },
-  integrations: {},
+  integrations: {
+    googleAnalytics: {
+      enabled: process.env.ENV_INTEGRATION_GOOGLE_ANALYTICS_ENABLED === 'true',
+      code: process.env.ENV_INTEGRATION_GOOGLE_ANALYTICS_CODE,
+    },
+  },
 }
 
 export default appConfig
