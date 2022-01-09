@@ -5,12 +5,15 @@ import { prepareHomePageSeo } from '../utils/seo/home'
 import CoreImage from '../components/core/CoreImage'
 import appConfig from '../config/appConfig'
 import CoreLink from '../components/core/CoreLink'
+import dayjs from 'dayjs'
 
 interface IProps extends IGlobalLayoutProps {
   pageData: {}
 }
 
 const Home: NextPage<IProps> = props => {
+  const age = dayjs().diff(dayjs(appConfig.global.birthDate), 'year')
+
   return (
     <div className="pt-5 lg:pt-8 lg:ml-72">
       <div className="px-5 md:px-10 pb-20 lg:max-w-[620px] absolute lg:left-1/2 lg:-translate-x-1/2 ">
@@ -31,7 +34,7 @@ const Home: NextPage<IProps> = props => {
 
         <div className="post-content text-lg text-gray900">
           <p className="">
-            A 23-year old <span className="font-medium font-primary-medium">full-stack developer</span> and an{' '}
+            A {age}-year old <span className="font-medium font-primary-medium">full-stack developer</span> and an{' '}
             <span className="font-medium font-primary-medium">open-sourcer</span>. Currently a consultant at ESPN
             re-writing the world's largest cricket platform{' '}
             <CoreLink

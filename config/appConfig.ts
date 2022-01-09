@@ -12,6 +12,7 @@ const appConfig = {
     nickName: nickName,
     fullName: fullName,
     emailAddress: 'www.shtakkar@gmail.com',
+    birthDate: '1998-09-09',
     socialProfiles: {
       twitter: 'https://twitter.com/shtakkar',
       instagram: 'https://www.instagram.com/_faiyaz_shaikh',
