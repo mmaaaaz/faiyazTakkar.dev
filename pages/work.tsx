@@ -21,7 +21,7 @@ const Work: NextPage<IProps> = props => {
         <div className="text-2xl lg:text-3xl font-bold font-primary-bold">My work experience!</div>
 
         <div className="mt-2">
-          Learn more about my profession experience on{' '}
+          Learn more about my professional experience on{' '}
           <CoreLink
             url={appConfig.global.socialProfiles.linkedIn}
             isExternal
