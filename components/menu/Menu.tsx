@@ -13,17 +13,20 @@ import { DesktopView, MobileView } from '../ResponsiveViews'
 import classnames from 'classnames'
 import { getIntroPageUrl } from '../../utils/intro'
 import { getSideProjectsPageUrl } from '../../utils/side-projects'
+import { AnalyticsEventType } from '../../constants/analytics'
 
 const PAGE_LINKS = [
   {
     label: 'Home',
     icon: HomeIcon,
     url: getHomePageUrl(),
+    analyticsEvent: AnalyticsEventType.NAV_HOME,
   },
   {
     label: 'Detailed Intro',
     icon: AnnotationIcon,
     url: getIntroPageUrl(),
+    analyticsEvent: AnalyticsEventType.NAV_INTRO,
   },
   // {
   //   label: 'Side Projects',
@@ -34,6 +37,7 @@ const PAGE_LINKS = [
     label: 'Work',
     icon: BriefcaseIcon,
     url: getWorkPageUrl(),
+    analyticsEvent: AnalyticsEventType.NAV_WORK,
   },
 ]
 
@@ -43,30 +47,35 @@ const SOCIAL_LINKS = [
     iconUrl: SOCIAL_ICONS_SRC_MAP.GITHUB,
     isExternal: true,
     url: appConfig.global.socialProfiles.gitHub,
+    analyticsEvent: AnalyticsEventType.NAV_SOCIAL_GITHUB,
   },
   {
     label: 'Twitter',
     iconUrl: SOCIAL_ICONS_SRC_MAP.TWITTER,
     isExternal: true,
     url: appConfig.global.socialProfiles.twitter,
+    analyticsEvent: AnalyticsEventType.NAV_SOCIAL_TWITTER,
   },
   {
     label: 'LinkedIn',
     iconUrl: SOCIAL_ICONS_SRC_MAP.LINKEDIN,
     isExternal: true,
     url: appConfig.global.socialProfiles.linkedIn,
+    analyticsEvent: AnalyticsEventType.NAV_SOCIAL_LINKEDIN,
   },
   {
     label: 'Instagram',
     iconUrl: SOCIAL_ICONS_SRC_MAP.INSTAGRAM,
     isExternal: true,
     url: appConfig.global.socialProfiles.instagram,
+    analyticsEvent: AnalyticsEventType.NAV_SOCIAL_INSTAGRAM,
   },
   {
     label: 'Email',
     iconUrl: SOCIAL_ICONS_SRC_MAP.MAIL,
     isExternal: false,
     url: `mailto:${appConfig.global.emailAddress}`,
+    analyticsEvent: AnalyticsEventType.NAV_SOCIAL_MAIL,
   },
 ]
 
@@ -89,7 +98,10 @@ const MenuContent: React.FC<IMenuProps> = () => {
               className={classnames(
                 'flex items-center transition-all rounded-lg w-full px-4 py-2 mb-2',
                 asPath === pageLink.url ? 'bg-primary hover:bg-primary text-white' : 'hover:bg-gray100'
-              )}>
+              )}
+              onClick={() => {
+                ga('event', pageLink.analyticsEvent)
+              }}>
               <Icon className="w-6 h-6 mr-2" />
               <span>{pageLink.label}</span>
             </CoreLink>
@@ -105,7 +117,10 @@ const MenuContent: React.FC<IMenuProps> = () => {
               key={socialLink.label}
               url={socialLink.url}
               className="flex items-center hover:bg-gray100 transition-all rounded-lg w-full px-4 py-2 mb-2"
-              isExternal={socialLink.isExternal}>
+              isExternal={socialLink.isExternal}
+              onClick={() => {
+                ga('event', socialLink.analyticsEvent)
+              }}>
               <CoreImage className="w-5 h-5 mr-2" alt={socialLink.label} url={socialLink.iconUrl} />
               <span>{socialLink.label}</span>
               {socialLink.isExternal ? <ExternalLinkIcon className="w-4 h-4 text-gray500 ml-auto" /> : null}
