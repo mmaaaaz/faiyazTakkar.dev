@@ -141,7 +141,7 @@ const MenuMobile: React.FC<IMenuMobileProps> = props => {
     <nav>
       {!showMenu ? (
         <div className="fixed bottom-0 left-0 z-10 block w-full p-2" onClick={() => toggleMenu(true)}>
-          <div className="border border-gray400 rounded-lg text-black bg-white/70 backdrop-filter backdrop-blur py-3 text-center cursor-pointer">
+          <div className="border border-gray400 rounded-lg text-black bg-white/70 backdrop-filter backdrop-blur py-3 text-center cursor-pointer font-medium font-primary-medium">
             Menu
           </div>
         </div>
@@ -151,7 +151,9 @@ const MenuMobile: React.FC<IMenuMobileProps> = props => {
         <div
           className="fixed bottom-0 left-0 right-0 z-10 p-2 m-2 bg-white/70 backdrop-filter backdrop-blur border border-gray400 rounded-lg"
           onClick={() => toggleMenu(false)}>
-          <div className="py-3 text-center cursor-pointer text-black" onClick={() => toggleMenu(false)}>
+          <div
+            className="py-3 text-center cursor-pointer text-black font-medium font-primary-medium"
+            onClick={() => toggleMenu(false)}>
             Close
           </div>
           <MenuContent />

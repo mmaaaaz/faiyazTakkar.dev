@@ -62,7 +62,7 @@ const Home: NextPage<IProps> = props => {
           </p>
 
           <p className="mt-8">
-            I've recently open-sourced a profitable product named{' '}
+            I've recently open-sourced a profitable solution named{' '}
             <CoreLink
               url="https://ownstore.dev"
               isExternal
