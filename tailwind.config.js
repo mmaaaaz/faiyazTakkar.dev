@@ -553,11 +553,12 @@ const tailwindConfig = {
       ...theme('width'),
       ...breakpoints(theme('screens')),
     }),
-    minHeight: {
+    minHeight: (theme, { breakpoints }) => ({
       0: '0px',
       full: '100%',
       screen: '100vh',
-    },
+      ...theme('height'),
+    }),
     minWidth: (theme, { breakpoints }) => ({
       0: '0rem',
       xs: '20rem',

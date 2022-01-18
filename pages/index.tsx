@@ -6,6 +6,8 @@ import CoreImage from '../components/core/CoreImage'
 import appConfig from '../config/appConfig'
 import CoreLink from '../components/core/CoreLink'
 import dayjs from 'dayjs'
+import { getIntroPageUrl } from '../utils/intro'
+import { AnnotationIcon } from '@heroicons/react/outline'
 
 interface IProps extends IGlobalLayoutProps {
   pageData: {}
@@ -51,8 +53,12 @@ const Home: NextPage<IProps> = props => {
           </p>
 
           <p className="mt-8">
-            On weekends I like to do nothing. Sometimes I would read poetry just to remind myself beauty still exists in
-            this world.
+            Learn more about me{' '}
+            <CoreLink
+              url={getIntroPageUrl()}
+              className="font-medium font-primary-medium border-dashed border-b border-funBlue text-funBlue inline-flex items-center">
+              here <AnnotationIcon className="w-5 ml-1" />
+            </CoreLink>
           </p>
 
           <p className="mt-8">

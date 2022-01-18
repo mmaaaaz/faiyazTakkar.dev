@@ -38,7 +38,7 @@ const Work: NextPage<IProps> = props => {
                   <CoreImage
                     url={workExperience.company.logo}
                     alt={`${appConfig.global.fullName}'s work experience at ${workExperience.company.name}`}
-                    className="w-14 h-14 mr-3 relative top-[6px]"
+                    className="w-14 h-14 min-w-14 min-h-14 mr-3 relative top-[6px]"
                   />
                 </div>
                 <div>
@@ -50,6 +50,16 @@ const Work: NextPage<IProps> = props => {
                     {workExperience.experience.from} - {workExperience.experience.to}
                     {workExperience.experience.total ? ` • ${workExperience.experience.total}` : ''}
                   </div>
+
+                  <div className="mt-2 text-sm">
+                    {/* <div className="font-medium font-primary-medium">Highlights:</div> */}
+                    <ul className="list-outside">
+                      {workExperience.highlights.map((highlight, hIndex) => (
+                        <li key={hIndex}>{highlight}</li>
+                      ))}
+                    </ul>
+                  </div>
+
                   <div className="mt-1">
                     {workExperience.company.urls.map((url, index) => (
                       <CoreLink
