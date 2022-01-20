@@ -81,7 +81,7 @@ const workConfig = {
       },
       highlights: [
         `First employee to join Proximity to re-write ESPNcricinfo.`,
-        `Worked with clients such as Delta Exchange, Hotstar, ESPN and Disney.`,
+        `Worked with global clients.`,
         `Lead core development from backend to frontend.`,
       ],
     },
