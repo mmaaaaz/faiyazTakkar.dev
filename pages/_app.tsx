@@ -57,7 +57,7 @@ const MyApp: NextPage<IProps> = props => {
         <AppSeo {...seo} />
 
         <PageContainer>
-          <div className="lg:lex items-start">
+          <div className="lg:flex items-start">
             <Menu />
             <PageTransition timeout={200} classNames="pageTransition">
               <Component {...pageProps} key={router.route} />

@@ -14,11 +14,9 @@ interface IProps extends IGlobalLayoutProps {
 }
 
 const Home: NextPage<IProps> = props => {
-  const age = dayjs().diff(dayjs(appConfig.global.birthDate), 'year')
-
   return (
     <div className="pt-5 lg:pt-8 lg:ml-72">
-      <div className="px-5 md:px-10 pb-20 lg:max-w-[620px] absolute lg:left-1/2 lg:-translate-x-1/2 ">
+      <div className="px-5 md:px-10 pb-20 lg:max-w-[620px] ">
         <div>
           <CoreImage
             url="/images/logo.jpeg"
@@ -36,23 +34,14 @@ const Home: NextPage<IProps> = props => {
 
         <div className="post-content text-lg text-gray900">
           <p className="">
-            A {age}-year old <span className="font-medium font-primary-medium">full-stack developer</span> and an{' '}
-            <span className="font-medium font-primary-medium">open-sourcer</span>. Currently a consultant at ESPN
-            re-writing the world's largest cricket platform{' '}
-            <CoreLink
-              url="https://www.espncricinfo.com"
-              isExternal
-              className="border-dashed border-b border-funBlue text-funBlue">
-              ESPNcricinfo
-            </CoreLink>
-            .
+            A passionate <span className="font-medium font-primary-medium">polygot programmer</span> and an{' '}
+            <span className="font-medium font-primary-medium">open-sourcer</span>. I like to build delightful digital
+            products. I believe in choosing the correct programing language for the job at hand.
           </p>
 
-          <p className="mt-8">
-            I like to build advanced yet beautiful digital products with technology that suits them best.
-          </p>
+          {/* <p className="mt-6">I like to build delightful digital products. And yes I'm language agnostic.</p> */}
 
-          <p className="mt-8">
+          <p className="mt-6">
             Learn more about me{' '}
             <CoreLink
               url={getIntroPageUrl()}
@@ -61,7 +50,7 @@ const Home: NextPage<IProps> = props => {
             </CoreLink>
           </p>
 
-          <p className="mt-8">
+          <p className="mt-6">
             I've recently open-sourced a profitable solution named{' '}
             <CoreLink
               url="https://ownstore.dev"
