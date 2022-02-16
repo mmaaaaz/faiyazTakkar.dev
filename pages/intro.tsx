@@ -53,9 +53,7 @@ const Intro: NextPage<IProps> = props => {
           .
         </p>
 
-        <p className="mt-5">
-          My other interests include literature, travelling, economics and history.
-        </p>
+        <p className="mt-5">My other interests include literature, travelling, economics and history.</p>
       </div>
     </div>
   )
