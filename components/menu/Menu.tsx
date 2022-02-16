@@ -109,7 +109,7 @@ const MenuContent: React.FC<IMenuProps> = () => {
         })}
       </div>
 
-      <div className="mt-6 mb-2 text-gray600 ml-4">Social</div>
+      <div className="mt-6 mb-2 text-gray600 ml-4">Let's connect</div>
       <div>
         {SOCIAL_LINKS.map((socialLink, index) => {
           return (
