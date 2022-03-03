@@ -24,9 +24,10 @@ const workConfig = {
       },
       highlights: [
         `Parent organization of the world's largest cricket platform.`,
-        `Joined ESPN as an Independent consultant for ESPNcricinfo.`,
+        `Joined ESPN as an independent consultant for ESPNcricinfo.`,
         `Worked with ESPN, Disney and Hotstar teams globally.`,
-        `Worked on legacy and native app codebases too.`,
+        `Core contributor to ESPNcricinfo from development to deployment.`,
+        `Took ownership of legacy codebases too.`,
       ],
     },
     {
@@ -80,9 +81,9 @@ const workConfig = {
         total: '10 mos',
       },
       highlights: [
-        `First employee to join Proximity to re-write ESPNcricinfo.`,
-        `Worked with global clients.`,
-        `Lead core development from backend to frontend.`,
+        `Proximity's first employee.`,
+        `Joined to help rewrite ESPNcricinfo from the ground up.`,
+        `Lead core development of ESPNcricinfo.`,
       ],
     },
     {
@@ -131,11 +132,13 @@ const workConfig = {
         total: '1 yr 2 mos',
       },
       highlights: [
+        `Youngest engineer (19y)`,
         `Parent organization of the world's largest matrimonial platform.`,
         `Initially worked on Shaadi.com's vernacular project.`,
         `Was part of Sangam.com's core front-end team.`,
         `Helped migrate all legacy pages to the new stack.`,
         `Worked on features end-to-end from FE to BE.`,
+        `Also developed testing tools for QA.`
       ],
     },
     {
@@ -158,7 +161,7 @@ const workConfig = {
       },
       highlights: [
         `Worked primary on open-source projects. Can be found on my GitHub profile.`,
-        `Built various projects with different languages for learning.`,
+        `Built various projects with different tech stack for learning.`,
       ],
     },
     {
