@@ -33,13 +33,13 @@ const Intro: NextPage<IProps> = props => {
             isExternal>
             Dharavi
           </CoreLink>{' '}
-          (Asia's largest slum). Started my professional jouney by working at a small-scale Jeans producing factory for
+          (Asia's largest slum). Started my professional jouney by working at a small-scale Jeans factory for
           almost a year when I was 17/18.
         </p>
 
         <p className="mt-5">
-          After some stability, I began working on full-stack web applications for learning. Worked with various
-          programming languages and open-sourced them all. Did this for more than 2 years.
+          After some stability, I began working on full-stack web applications for learning. Developed various projects 
+          with different tech stack and open-sourced them all. Did this for more than 2 years.
         </p>
 
         <p className="mt-5">
