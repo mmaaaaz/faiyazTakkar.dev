@@ -138,7 +138,7 @@ const workConfig = {
         `Was part of Sangam.com's core front-end team.`,
         `Helped migrate all legacy pages to the new stack.`,
         `Worked on features end-to-end from FE to BE.`,
-        `Also developed testing tools for QA.`
+        `Also developed testing tools for QA.`,
       ],
     },
     {
